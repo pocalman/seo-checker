@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SEO AI Pro</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            SEO AI Pro
+        </div>
+
+        <div class="nav-item active" onclick="showDashboard()">
+            📊 Dashboard
+        </div>
+
+        <div class="nav-item" onclick="showHistory()">
+            🕓 History
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Search -->
+
+        <div class="topbar">
+
+            <button
+                class="menu-btn"
+                onclick="toggleSidebar()">
+
+                ☰
+
+            </button>
+
+            <input
+                id="url"
+                placeholder="example.com">
+
+            <button
+                class="btn primary"
+                onclick="analyze()">
+
+                Analyze Website
+
+            </button>
+
+        </div>
+
+        <!-- DASHBOARD -->
+
+        <div id="dashboardPanel">
+
+            <!-- KPI -->
+
+            <div class="score-row">
+
+                <div class="score-card">
+
+                    <div class="score-title">
+                        SEO Score
+                    </div>
+
+                    <div
+                        id="seoScore"
+                        class="score-value">
+
+                        --
+
+                    </div>
+
+                </div>
+
+                <div class="score-card">
+
+                    <div class="score-title">
+                        GSEO Score
+                    </div>
+
+                    <div
+                        id="gseoScore"
+                        class="score-value">
+
+                        --
+
+                    </div>
+
+                </div>
+
+                <div class="score-card">
+
+                    <div class="score-title">
+                        Words
+                    </div>
+
+                    <div
+                        id="words"
+                        class="score-value">
+
+                        --
+
+                    </div>
+
+                </div>
+
+                <div class="score-card">
+
+                    <div class="score-title">
+                        Missing ALT
+                    </div>
+
+                    <div
+                        id="images"
+                        class="score-value">
+
+                        --
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RESULTS -->
+
+            <div
+                id="result"
+                class="panel">
+
+                <h2>
+                    Website Audit
+                </h2>
+
+                <p>
+
+                    Enter a website above to generate a complete SEO audit.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- HISTORY -->
+
+        <div
+            id="historyPanel"
+            class="panel hidden">
+
+            <h2>
+                Analysis History
+            </h2>
+
+            <div id="historyList">
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* ---------------- LAYOUT ---------------- */
+
+.layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar {
+    width: 220px;
+    background: #111827;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border-right: 1px solid #1f2937;
+}
+
+.logo {
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #38bdf8;
+    font-size: 18px;
+}
+
+.nav-item {
+    padding: 10px 12px;
+    margin: 6px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+    color: #cbd5e1;
+}
+
+.nav-item:hover {
+    background: #1f2937;
+    color: white;
+}
+
+.nav-item.active {
+    background: #1f2937;
+    color: white;
+}
+
+/* ---------------- MAIN ---------------- */
+
+.main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ---------------- HISTORY ---------------- */
+
+.history {
+    width: 300px;
+    background: #0b1220;
+    padding: 15px;
+    overflow-y: auto;
+    border-left: 1px solid #1f2937;
+}
+
+/* ---------------- TOPBAR ---------------- */
+
+.topbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.topbar input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #1f2937;
+    background: #1f2937;
+    color: white;
+    outline: none;
+}
+
+.topbar input:focus {
+    border-color: #2563eb;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.primary {
+    background: #2563eb;
+    color: white;
+}
+
+/* ---------------- SCORE GRID ---------------- */
+
+.score-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.score-card {
+    background: linear-gradient(145deg, #1f2937, #111827);
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #1f2937;
+    transition: 0.2s;
+}
+
+.score-card:hover {
+    transform: translateY(-2px);
+}
+
+.score-title {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.score-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ---------------- RESULT PANEL ---------------- */
+
+.panel {
+    margin-top: 20px;
+    background: #0f172a;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #1f2937;
+}
+
+/* ---------------- HISTORY ITEM ---------------- */
+
+.history-item {
+    background: #1f2937;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.history-item:hover {
+    background: #374151;
+    transform: translateX(3px);
+}
+
+/* ---------------- AUDIT CARDS ---------------- */
+
+.audit-card {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: #1f2937;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+}
+
+.audit-priority {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.audit-priority.critical {
+    background: #ef4444;
+    color: white;
+}
+
+.audit-priority.high {
+    background: #f59e0b;
+    color: black;
+}
+
+.audit-priority.medium {
+    background: #3b82f6;
+    color: white;
+}
+
+.audit-priority.low {
+    background: #10b981;
+    color: white;
+}
+
+/* ---------------- TECH TABLE ---------------- */
+
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tech-table td {
+    padding: 10px;
+    border-bottom: 1px solid #1f2937;
+}
+
+.tech-table td:first-child {
+    color: #94a3b8;
+    width: 40%;
+}
+
+/* ---------------- MENU BUTTON ---------------- */
+
+.menu-btn {
+    display: none;
+    background: #1f2937;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* ---------------- UTILS ---------------- */
+
+.hidden {
+    display: none !important;
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b1220;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+    .history {
+        display: none;
+    }
+
+    .score-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .score-row {
+        grid-template-columns: 1fr;
+    }
+
+    .history {
+        display: none;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
